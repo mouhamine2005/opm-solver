@@ -1,0 +1,33 @@
+# Git
+.git/
+
+# Dependencies
+node_modules/
+venv/
+env/
+__pycache__/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+coverage/
+.pytest_cache/

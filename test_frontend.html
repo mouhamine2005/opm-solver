@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test OPM Solver</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Test API OPM Solver</h1>
+    <button onclick="testSolve()">Test Solve</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function testSolve() {
+            const resultEl = document.getElementById('result');
+            resultEl.textContent = 'Testing...';
+            
+            try {
+                const data = {
+                    matrix_a: { data: [[7.1, 6.9], [-1.7, 5.4]] },
+                    vector_b: { data: [5, 8] },
+                    method: "gauss"
+                };
+                
+                console.log('Sending:', data);
+                
+                const response = await axios.post('http://localhost:8000/api/v1/solve', data);
+                
+                console.log('Response:', response.data);
+                resultEl.textContent = JSON.stringify(response.data, null, 2);
+            } catch (error) {
+                console.error('Error:', error);
+                resultEl.textContent = 'Error: ' + (error.response?.data?.detail || error.message);
+            }
+        }
+    </script>
+</body>
+</html>
