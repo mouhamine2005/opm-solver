@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'OPM Solver Pro',
-  description: 'Plateforme Interactive de Résolution de Systèmes Linéaires et Simulation de Machines de Turing',
+  title: 'OPM Solver Pro - Résolution de Systèmes Linéaires',
+  description: 'Plateforme Interactive de Résolution de Systèmes Linéaires et Simulation de Machines de Turing avec Next.js et FastAPI',
 }
 
 export default function RootLayout({
