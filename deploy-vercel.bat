@@ -80,18 +80,28 @@ echo 🎯 Prochaines étapes :
 echo.
 echo 1️⃣  Notez l'URL de votre site (affichée ci-dessus)
 echo.
-echo 2️⃣  Déployez le BACKEND sur Railway :
-echo     • Allez sur https://railway.app
-echo     • New Project ^> Deploy from GitHub
-echo     • Importez votre repository
-echo     • Configurez Python 3.13
+echo 2️⃣  (Option) Déployez le BACKEND sur Railway si pas fait :
+echo     • https://railway.app (Python FastAPI)
 echo.
-echo 3️⃣  Ajoutez l'URL du backend dans Vercel :
-echo     • Allez sur https://vercel.com/dashboard
-echo     • Sélectionnez votre projet
-echo     • Settings ^> Environment Variables
-echo     • Ajoutez : NEXT_PUBLIC_API_URL = [URL_RAILWAY]
-echo     • Redéployez
+echo 3️⃣  Configuration automatique de la variable NEXT_PUBLIC_API_URL
+echo.
+set /p BACKEND_URL=👉 Entrez l'URL publique du backend (ex: https://xxx.up.railway.app) ou laissez vide pour sauter : 
+if NOT "%BACKEND_URL%"=="" (
+    echo.
+    echo 🔧 Ajout variable d'environnement (production)...
+    echo %BACKEND_URL% | vercel env add NEXT_PUBLIC_API_URL production
+    if errorlevel 1 echo ⚠️ Échec ajout variable production (essaiez via dashboard).
+    echo.
+    echo 🔧 Ajout variable d'environnement (preview)...
+    echo %BACKEND_URL% | vercel env add NEXT_PUBLIC_API_URL preview
+    if errorlevel 1 echo ⚠️ Échec ajout variable preview.
+    echo.
+    echo 🔄 Redeploiement avec variable configurée...
+    vercel --prod
+)
+echo.
+echo 🧪 Test rapide (si backend fourni) :
+echo     Ouvrez https://votre-site.vercel.app et lancez une simulation Turing.
 echo.
 echo 📖 Guide complet : README_DEPLOYMENT.md
 echo.

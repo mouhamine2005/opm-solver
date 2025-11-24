@@ -21,7 +21,7 @@ export default function Home() {
             Commencer
           </a>
           <a
-            href="http://localhost:8000/docs"
+            href={`${process.env.NEXT_PUBLIC_API_URL || 'https://your-backend.railway.app'}/docs`}
             target="_blank"
             className="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"
           >
