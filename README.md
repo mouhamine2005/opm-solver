@@ -2,7 +2,8 @@
 
 **Plateforme Interactive de Résolution de Systèmes Linéaires**
 
-Application web fullstack professionnelle pour résoudre des systèmes linéaires Ax = b, développée dans le cadre du module OPM (Outils de Programmation Mathématiques) - USTHB Licence 3 Informatique.
+Application web fullstack professionnelle pour résoudre des systèmes linéaires Ax = b, développée dans le cadre du module OPM (Outils de Programmation Mathématiques) - USTHB Licence 1
+Informatique.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
