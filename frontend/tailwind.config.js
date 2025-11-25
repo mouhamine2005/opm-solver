@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  important: true,
   theme: {
     extend: {
       colors: {
@@ -22,4 +23,10 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'bg-primary-600',
+    'bg-primary-700',
+    'hover:bg-primary-700',
+    'text-primary-600',
+  ],
 }
