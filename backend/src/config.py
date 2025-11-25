@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://localhost:3001",
+        "https://opm-solver-6ls9.vercel.app",
         "https://*.vercel.app",
         "https://vercel.app",
     ]
